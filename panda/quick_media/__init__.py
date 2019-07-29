@@ -2,15 +2,13 @@
 """.
 
 @file: __init__.py
-@guid: 0c42850d5b4f463faaf1a7ab845b5af7
+@guid: 54cb74c5f02c4a11b14d3c6d9a8a07e3
 
 @author: Yue Peng
 @email: yuepaang@gmail.com
-@date: 2019-07-29 18:00:51
+@date: 2019-07-29 22:40:59
 @modified:
 
 @brief:
 """
 __author__ = "Yue Peng"
-
-import panda.quick_media.base

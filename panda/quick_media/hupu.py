@@ -18,7 +18,7 @@ import time
 from urllib import request
 from bs4 import BeautifulSoup
 
-from base import SocialMedia
+from panda.quick_media.base import SocialMedia
 
 
 class Hupu(SocialMedia):

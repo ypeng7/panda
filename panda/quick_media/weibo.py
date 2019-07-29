@@ -13,11 +13,10 @@
 """
 __author__ = "Yue Peng"
 
-
 import requests
 from lxml import etree
 
-from base import SocialMedia
+from panda.quick_media.base import SocialMedia
 
 
 class Weibo(SocialMedia):
