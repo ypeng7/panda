@@ -17,7 +17,7 @@ __author__ = "Yue Peng"
 import requests
 from lxml import etree
 
-from panda.quick_media.base import SocialMedia
+from base import SocialMedia
 
 
 class Weibo(SocialMedia):
