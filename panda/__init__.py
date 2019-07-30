@@ -13,4 +13,8 @@
 """
 __author__ = "Yue Peng"
 
+__doc__ = "Self-use python scripts"
+
+__name__ = "panda"
+
 import panda.quick_media.base
