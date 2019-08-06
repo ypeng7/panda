@@ -12,10 +12,10 @@
 @brief:
 """
 __author__ = "Yue Peng"
-from panda.quick_media.weibo import Weibo
-from panda.quick_media.baidu import Baidu
-from panda.quick_media.zhihu import Zhihu
-from panda.quick_media.v2ex import V2EX
+from panda.social_media.weibo import Weibo
+from panda.social_media.baidu import Baidu
+from panda.social_media.zhihu import Zhihu
+from panda.social_media.v2ex import V2EX
 
 Weibo.parse()
 Baidu.parse()

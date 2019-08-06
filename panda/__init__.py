@@ -11,10 +11,10 @@
 
 @brief:
 """
-__author__ = "Yue Peng"
+__author__ = "Yue Peng <yuepaang@gmail.com>"
+
+__version__ = "0.0.1"
 
 __doc__ = "Self-use python scripts"
 
 __name__ = "panda"
-
-import panda.quick_media.base

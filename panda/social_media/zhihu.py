@@ -16,13 +16,13 @@ __author__ = "Yue Peng"
 import requests
 from lxml import etree
 
-from panda.quick_media.base import SocialMedia
+from panda.social_media.base import SocialMedia
 
 
 class Zhihu(SocialMedia):
     ZHIHU_REDIAN = "https://www.zhihu.com/hot"
     HEADERS = {
-        "user-agent":"Baiduspider",
+        "user-agent": "Baiduspider",
         "cookie": f"_zap=c9245bd9-4c33-4336-8ba8-5b3dd669f112; "
         f"_xsrf=25zbdplpf8g1eOTx8liThpJvjXIKNFpU; d_c0=\""
         f"AHCjLZP2vA-PTm5R4BJliqFfV0GHoca7-pc=|1563159142\"; "
@@ -39,12 +39,12 @@ class Zhihu(SocialMedia):
         f"Mi4xQXBPUEF3QUFBQUFBY0tNdGtfYThEeVlBQUFCZ0FsVk5NNzRmWGdEaDl6NnJndHB2"
         f"M3RCSlJIb3o4LTJlc0lKU05B|4c3cb58a8ea6615d1d6db372165a0199daed52f908ec"
         f"02cd7665a41abe166a2b\""
-        }
+    }
 
     @classmethod
     def parse(cls):
         r = requests.get(cls.ZHIHU_REDIAN, headers=cls.HEADERS)
-        r.encoding="utf-8"
+        r.encoding = "utf-8"
         soup = etree.HTML(r.text)
         for soup_a in soup.xpath("//div[@class='HotItem-content']/a"):
             zhihu_title = soup_a.get('title')
