@@ -12,19 +12,18 @@
 @brief:
 """
 __author__ = "Yue Peng"
-
-import requests
 from lxml import etree
 
 from panda.social_media.base import SocialMedia
+from panda.social_media.helper import get_text
 
 
 class Baidu(SocialMedia):
     BAIDU_REDIAN = "http://top.baidu.com/buzz?b=1"
 
     @classmethod
-    def parse(cls):
-        r = requests.get(cls.BAIDU_REDIAN)
+    def get_trending(cls):
+        r = get_text(cls.BAIDU_REDIAN)
         r.encoding = 'gb2312'
         soup = etree.HTML(r.text)
         for soup_a in soup.xpath("//a[@class='list-title']"):

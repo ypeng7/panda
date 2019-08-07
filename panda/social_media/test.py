@@ -16,8 +16,10 @@ from panda.social_media.weibo import Weibo
 from panda.social_media.baidu import Baidu
 from panda.social_media.zhihu import Zhihu
 from panda.social_media.v2ex import V2EX
+from panda.social_media.github import GitHub
 
-Weibo.parse()
-Baidu.parse()
-Zhihu.parse()
-V2EX.parse()
+Weibo.get_trending()
+Baidu.get_trending()
+Zhihu.get_trending()
+V2EX.get_trending()
+GitHub.get_trending()

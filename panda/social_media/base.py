@@ -17,5 +17,5 @@ __author__ = "Yue Peng"
 class SocialMedia(object):
 
     @classmethod
-    def parse(cls):
+    def get_trending(cls):
         raise NotImplementedError
