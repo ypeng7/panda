@@ -17,9 +17,11 @@ from panda.social_media.baidu import Baidu
 from panda.social_media.zhihu import Zhihu
 from panda.social_media.v2ex import V2EX
 from panda.social_media.github import GitHub
+from panda.social_media.hupu import Hupu
 
 Weibo.get_trending()
 Baidu.get_trending()
 Zhihu.get_trending()
 V2EX.get_trending()
 GitHub.get_trending()
+Hupu.get_trending("勇士")
