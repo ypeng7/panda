@@ -20,12 +20,23 @@ from functools import wraps
 import requests
 from requests.exceptions import ConnectionError
 
-
 HEADERS_FN = os.path.join(os.path.dirname(__file__), "headers.txt")
+
+# 随机头信息
+USER_AGENTS = [line.strip() for line in open(HEADERS_FN, "r").readlines()]
+
+
+# 请求头
+BASE_HEADERS = {
+    "User-Agent": random.choice(USER_AGENTS),
+    "Accept-Encoding": "gzip, deflate, sdch",
+    "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+}
 
 
 def retry(func, max_retry_times=3, wait_time=5):
-
     @wraps(func)
     def deco(*args, **kwargs):
         for i in range(max_retry_times):
@@ -36,6 +47,7 @@ def retry(func, max_retry_times=3, wait_time=5):
                 continue
             else:
                 return result
+
     return deco
 
 
@@ -49,17 +61,3 @@ def get_text(url, options={}):
             return resp
     except ConnectionError:
         return None
-
-
-# 随机头信息
-USER_AGENTS = [line.strip() for line in open(HEADERS_FN, "r").readlines()]
-
-
-# 请求头
-BASE_HEADERS = {
-    'User-Agent':  random.choice(USER_AGENTS),
-    'Accept-Encoding': 'gzip, deflate, sdch',
-    'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
-    'Connection': 'keep-alive',
-    'Upgrade-Insecure-Requests': '1'
-}
